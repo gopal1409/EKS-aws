@@ -43,7 +43,8 @@ eksctl utils associate-iam-oidc-provider \
     --cluster eksdemo1 \
     --approve
 ```
-
+###delte node group
+eksctl delete nodegroup --cluster my-cluster --region region-code --name mymng
 
 
 ## Step-03: Create EC2 Keypair
