@@ -73,7 +73,24 @@ eksctl create nodegroup --cluster=eksdemo1 \
                         --appmesh-access \
                         --alb-ingress-access 
 ```
+###create node group with spot instance
 
+eksctl create nodegroup --cluster=eks-gd \
+                       --region=us-east-1 \
+                       --name=eks-gd-nodegroup \
+                       --spot --instance-types=t3.micro,t3.medium \
+                       --nodes=2 \
+                       --nodes-min=2 \
+                       --nodes-max=4 \
+                       --node-volume-size=20 \
+                       --ssh-access \
+                       --ssh-public-key=eksgopal \
+                       --managed \
+                       --asg-access \
+                       --external-dns-access \
+                       --full-ecr-access \
+                       --appmesh-access \
+                       --alb-ingress-access 
 ## Step-05: Verify Cluster & Nodes
 
 ### Verify NodeGroup subnets to confirm EC2 Instances are in Public Subnet
